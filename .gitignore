@@ -1,0 +1,105 @@
+# Dependencies
+node_modules
+jspm_packages
+
+package-lock.json
+# */**/yarn.lock
+
+# Logs
+*.log
+
+# Temp directories
+.temp
+.tmp
+.cache
+
+# Yarn
+**/.yarn/cache
+**/.yarn/*state*
+
+# Generated dirs
+dist
+.nuxt
+.nuxt-*
+.output
+.gen
+nuxt.d.ts
+
+# Junit reports
+reports
+
+# Coverage reports
+coverage
+*.lcov
+.nyc_output
+
+# Intellij idea
+*.iml
+.idea
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+.vercel_build_output
+.build-*
+.env
+.netlify
+.next
+
+.env.*.local
+.env.local
+.turbo
+'.turbo'
+.rollup
+
+**/dist/**
+**/__snapshots__/**
+
+# Miniflare
+.mf
+
+.sanity
+temp
+
+bin/*
+
+.dev.vars
+.wrangler
+
+# Azure AD B2C settings
+Azure AD B2C Policies/appsettings.json
+appsettings.json
+Azure AD B2C Policies/Environments/*
+Environments/*
+
+# Azurite artifacts
+__blobstorage__
+__queuestorage__
+__azurite_db*__.json
+
+# Svelte-kit and @sveltejs/package
+.svelte-kit
+
+.vite
+
+.astro
+
+*.generated.*
