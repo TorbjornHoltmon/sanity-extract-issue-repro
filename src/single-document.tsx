@@ -6,24 +6,6 @@ import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import type { ObjectInputProps } from 'sanity';
 import { defineField, defineType } from 'sanity';
 
-function YoutubeInput(props: ObjectInputProps) {
-  const id = getVideoId(props.value?.url_or_id);
-  const muted = props.value?.muted ?? false;
-
-  return (
-    <Stack space={4}>
-      {id ? (
-        <LiteYouTubeEmbed
-          title="YouTube Embed" // a11y, always provide a title for iFrames: https://dequeuniversity.com/tips/provide-iframe-titles Help the web be accessible ;)
-          id={id}
-          muted={muted}
-        ></LiteYouTubeEmbed>
-      ) : null}
-      {props.renderDefault(props)}
-    </Stack>
-  );
-}
-
 export const testDocument = defineType({
   name: 'test',
   title: 'My document',
@@ -43,6 +25,40 @@ export const testDocument = defineType({
     }),
   ],
 });
+
+function getVideoId(url_or_id: string | undefined) {
+  if (!url_or_id) {
+    return undefined;
+  }
+
+  if (/^([^#\&\?]{11})$/.test(url_or_id)) {
+    return url_or_id;
+  }
+
+  const result = _getVideoId(url_or_id);
+
+  if (result && result.service === 'youtube') {
+    return result.id;
+  }
+}
+
+function YoutubeInput(props: ObjectInputProps) {
+  const id = getVideoId(props.value?.url_or_id);
+  const muted = props.value?.muted ?? false;
+
+  return (
+    <Stack space={4}>
+      {id ? (
+        <LiteYouTubeEmbed
+          title="YouTube Embed" // a11y, always provide a title for iFrames: https://dequeuniversity.com/tips/provide-iframe-titles Help the web be accessible ;)
+          id={id}
+          muted={muted}
+        ></LiteYouTubeEmbed>
+      ) : null}
+      {props.renderDefault(props)}
+    </Stack>
+  );
+}
 
 export const youtubeObject = defineType({
   type: 'object',
@@ -82,13 +98,6 @@ export const youtubeObject = defineType({
       };
     },
   },
-  fieldsets: [
-    {
-      name: 'playback_settings',
-      title: 'Playback settings',
-      options: { collapsible: true, collapsed: true },
-    },
-  ],
   fields: [
     defineField({
       name: 'url_or_id',
@@ -102,46 +111,5 @@ export const youtubeObject = defineType({
           return 'Invalid YouTube URL or ID';
         }),
     }),
-    defineField({
-      name: 'loop',
-      type: 'boolean',
-      title: 'Loop',
-      initialValue: false,
-      description: 'Video playback restarts automatically when it ends',
-      fieldset: 'playback_settings',
-    }),
-    defineField({
-      name: 'muted',
-      type: 'boolean',
-      title: 'Muted',
-      initialValue: false,
-      description: 'Video playback starts with the sound turned off',
-      fieldset: 'playback_settings',
-    }),
-    defineField({
-      name: 'startsAt',
-      type: 'number',
-      title: 'Starts at',
-      description: 'Starts the video at a specific time in seconds',
-      validation: (Rule) => Rule.min(0).integer(),
-      initialValue: 0,
-      fieldset: 'playback_settings',
-    }),
   ],
 });
-
-function getVideoId(url_or_id: string | undefined) {
-  if (!url_or_id) {
-    return undefined;
-  }
-
-  if (/^([^#\&\?]{11})$/.test(url_or_id)) {
-    return url_or_id;
-  }
-
-  const result = _getVideoId(url_or_id);
-
-  if (result && result.service === 'youtube') {
-    return result.id;
-  }
-}
