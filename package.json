@@ -1,18 +1,24 @@
 {
   "name": "sanity-extract-repro",
+  "version": "1.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
-    "generate:schema": "sanity schema extract --enforce-required-fields true --path ./schema.generated.json"
+    "generate:schema": "sanity schema extract --enforce-required-fields true --path ./schema.generated.json",
+    "sanity-versions": "sanity versions",
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "start": "sanity start"
   },
   "dependencies": {
     "@sanity/icons": "^3.7.0",
     "@sanity/ui": "^2.15.13",
-    "@sanity/util": "^3.86.1",
     "get-video-id": "^4.1.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-lite-youtube-embed": "^2.5.1",
-    "sanity": "^3.86.1"
+    "sanity": "^3.86.1",
+    "styled-components": "6.1.17"
   },
   "devDependencies": {
     "@types/node": "^22.14.1",

@@ -14,9 +14,6 @@ importers:
       '@sanity/ui':
         specifier: ^2.15.13
         version: 2.15.13(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      '@sanity/util':
-        specifier: ^3.86.1
-        version: 3.86.1(@types/react@18.3.20)(debug@4.4.0)
       get-video-id:
         specifier: ^4.1.7
         version: 4.1.7
@@ -32,6 +29,9 @@ importers:
       sanity:
         specifier: ^3.86.1
         version: 3.86.1(@emotion/is-prop-valid@1.2.2)(@types/node@22.15.3)(@types/react@18.3.20)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(yaml@2.7.1)
+      styled-components:
+        specifier: 6.1.17
+        version: 6.1.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@types/node':
         specifier: ^22.14.1
@@ -5793,15 +5793,15 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@sanity/presentation-comlink@1.0.16(@sanity/client@6.29.1(debug@4.4.0))(@sanity/types@3.86.1(@types/react@18.3.20))':
+  '@sanity/presentation-comlink@1.0.16(@sanity/client@6.29.1)(@sanity/types@3.86.1(@types/react@18.3.20))':
     dependencies:
       '@sanity/client': 6.29.1(debug@4.4.0)
       '@sanity/comlink': 3.0.1
-      '@sanity/visual-editing-types': 1.0.15(@sanity/client@6.29.1(debug@4.4.0))(@sanity/types@3.86.1(@types/react@18.3.20))
+      '@sanity/visual-editing-types': 1.0.15(@sanity/client@6.29.1)(@sanity/types@3.86.1(@types/react@18.3.20))
     transitivePeerDependencies:
       - '@sanity/types'
 
-  '@sanity/preview-url-secret@2.1.8(@sanity/client@6.29.1(debug@4.4.0))':
+  '@sanity/preview-url-secret@2.1.8(@sanity/client@6.29.1)':
     dependencies:
       '@sanity/client': 6.29.1(debug@4.4.0)
       '@sanity/uuid': 3.0.2
@@ -5928,7 +5928,7 @@ snapshots:
       '@types/uuid': 8.3.4
       uuid: 8.3.2
 
-  '@sanity/visual-editing-types@1.0.15(@sanity/client@6.29.1(debug@4.4.0))(@sanity/types@3.86.1(@types/react@18.3.20))':
+  '@sanity/visual-editing-types@1.0.15(@sanity/client@6.29.1)(@sanity/types@3.86.1(@types/react@18.3.20))':
     dependencies:
       '@sanity/client': 6.29.1(debug@4.4.0)
     optionalDependencies:
@@ -8043,8 +8043,8 @@ snapshots:
       '@sanity/message-protocol': 0.9.0
       '@sanity/migrate': 3.86.1(@types/react@18.3.20)
       '@sanity/mutator': 3.86.1(@types/react@18.3.20)
-      '@sanity/presentation-comlink': 1.0.16(@sanity/client@6.29.1(debug@4.4.0))(@sanity/types@3.86.1(@types/react@18.3.20))
-      '@sanity/preview-url-secret': 2.1.8(@sanity/client@6.29.1(debug@4.4.0))
+      '@sanity/presentation-comlink': 1.0.16(@sanity/client@6.29.1)(@sanity/types@3.86.1(@types/react@18.3.20))
+      '@sanity/preview-url-secret': 2.1.8(@sanity/client@6.29.1)
       '@sanity/schema': 3.86.1(@types/react@18.3.20)(debug@4.4.0)
       '@sanity/sdk': 0.0.0-alpha.25(@types/react@18.3.20)(debug@4.4.0)(immer@10.1.1)(react@18.3.1)(use-sync-external-store@1.5.0(react@18.3.1))
       '@sanity/telemetry': 0.8.1(react@18.3.1)
